@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --Radial-Gradient: radial-gradient(
+    circle at top center,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Hearder-Outline: hsl(217, 16%, 45%);
+  --white-bg: #fff;
+
+  --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+  --Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+  --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+  --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+  --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 400ms ease-in-out;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--Radial-Gradient);
+}
+
+/*================== Start Header ====================*/
+
+header {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid var(--Hearder-Outline);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+header .logo {
+  width: 4rem;
+}
+
+
+header .logo img {
+  width: 100%;
+}
+
+header .score {
+  background-color: var(--white-bg);
+  width: 6rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+header .score p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--Score-Text);
+}
+
+header .score h3 {
+  font-size: 2.5rem;
+  color: var(--Dark-Text);
+  font-weight: 700;
+}
+
+/*================== Media Query (Tablet) ====================*/
+@media screen and (min-width: 768px) {
+  header {
+    width: 75%;
+  }
+}
+
+/*================== Media Query (Large Screen) ====================*/
+@media screen and (min-width: 1024px) {
+  header {
+    width: 50%;
+  }
+
+  header .logo {
+    width: 6rem;
+  }
+
+  header .score {
+    width: 7rem;
+    padding: 1rem;
+  }
+
+  header .score p {
+    font-size: 1.1rem;
+  }
+
+  header .score h3 {
+    font-size: 3rem;
+  }
+}
+
+/*================== End Header ====================*/
+
+/*================== Start Cards Container ====================*/
+.cards__container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 8rem auto;
+  border: 3px solid var(--Dark-Text);
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+.game__card {
+  background-color: var(--white-bg);
+  width: 5.5rem;
+  height: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 10px solid;
+  position: absolute;
+  cursor: pointer;
+
+  &.win {
+    animation: shadowAnimation 3s infinite alternate;
+  }
+}
+
+.game__card img {
+  width: 45%;
+}
+
+.game__card.scissors {
+  border-color: hsl(40, 84%, 53%);
+  box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2), 0 5px 0 hsl(39, 89%, 45%);
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.game__card.paper {
+  right: -15%;
+  top: 20%;
+  border-color: hsl(230, 89%, 65%);
+  box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2), 0 5px 0 hsl(230, 89%, 60%);
+}
+
+.game__card.rock {
+  right: 0;
+  top: 75%;
+  border-color: hsl(349, 70%, 56%);
+  box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2), 0 5px 0 hsl(349, 70%, 45%);
+}
+
+.game__card.lizard {
+  left: 0;
+  top: 75%;
+  border-color: hsl(261, 72%, 63%);
+  box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2), 0 5px 0 hsl(261, 72%, 55%);
+}
+
+.game__card.spock {
+  left: -15%;
+  top: 20%;
+  border-color: hsl(189, 58%, 57%);
+  box-shadow: inset 0 8px 0 rgba(0, 0, 0, 0.2), 0 5px 0 hsl(189, 58%, 50%);
+}
+
+/*================== Media Query (Tablet) ====================*/
+@media screen and (min-width: 768px) {
+  .game__card {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+/*================== Media Query (Large Screen) ====================*/
+@media screen and (min-width: 1024px) {
+  .cards__container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .game__card {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+/*================== End Cards Container ====================*/
+
+/*================== Start game proccess ====================*/
+.game__proccess {
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  display: none;
+
+  > div:not(.result__box) {
+    min-height: 166.093px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white-bg);
+    }
+
+    .timer__box {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      background-color: hsl(237, 49%, 15%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  }
+
+  .game__card {
+    position: static;
+    width: 7rem;
+    height: 7rem;
+    inset: 0;
+    transform: translate(0);
+  }
+}
+
+/*================== Media Query (Large Screen) ====================*/
+@media screen and (min-width: 1024px) {
+  .game__proccess {
+    > div:not(.result__box) {
+      min-height: 7rem;
+      flex-direction: column;
+
+      p {
+        font-size: 1.3rem;
+      }
+
+      .timer__box {
+        width: 14rem;
+        height: 14rem;
+        font-size: 3rem;
+      }
+    }
+
+    .game__card {
+      position: static;
+      width: 14rem;
+      height: 14rem;
+      border-width: 20px;
+      inset: 0;
+      transform: translate(0);
+    }
+  }
+}
+
+/*================== End game proccess ====================*/
+
+/*================== Start result box ====================*/
+.result__box {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+}
+
+.result__message {
+  text-align: center;
+  color: var(--white-bg);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+.play__again-btn {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 3.5rem;
+  background-color: var(--white-bg);
+  color: var(--Dark-Text);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--Dark-Text);
+    color: var(--white-bg);
+  }
+}
+
+/*================== Media Query (Large Screen) ====================*/
+@media screen and (min-width: 1024px) {
+  .result__box {
+    position: static;
+    inset: 0;
+    transform: translateX(0);
+    height: fit-content;
+  }
+
+  .result__message {
+    text-align: center;
+    color: var(--white-bg);
+    font-size: 4rem;
+    margin: 0 0;
+  }
+
+  .play__again-btn {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 4rem;
+    background-color: var(--white-bg);
+    color: var(--Dark-Text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--Dark-Text);
+      color: var(--white-bg);
+    }
+  }
+}
+
+/*================== End result box ====================*/
+
+/*================== Start rules ====================*/
+.rules__btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 2.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid var(--white-bg);
+  color: var(--white-bg);
+  cursor: pointer;
+}
+
+.rules__container {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  transform: translateX(-100%);
+
+  &.active {
+    transform: translateX(0);
+
+    .rules__box {
+      transform: scale(1);
+    }
+  }
+
+  .rules__box {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-bg);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    transform: scale(0);
+    transition: all 400ms ease-in-out 400ms;
+
+    .rules__header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        color: var(--Dark-Text);
+      }
+
+      img {
+        cursor: pointer;
+      }
+
+      img {
+        width: 1.2rem;
+      }
+    }
+
+    img {
+      width: 300px;
+      margin: 3rem 0;
+    }
+  }
+}
+
+/*================== Media Query (Tablet) ====================*/
+@media screen and (min-width: 768px) {
+  .rules__btn {
+    left: unset;
+    right: 3rem;
+    transform: translateX(0);
+    width: max-content;
+  }
+  .rules__container {
+    .rules__box {
+      width: auto;
+      height: auto;
+
+      .rules__header {
+        img {
+          width: unset;
+        }
+
+        img {
+          width: unset;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+/*================== End rules ====================*/
+
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: unset;
+  }
+  100% {
+    box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0.1),
+      0 0 0 5rem rgba(255, 255, 255, 0.09), 0 0 0 8rem rgba(255, 255, 255, 0.05);
+  }
+}

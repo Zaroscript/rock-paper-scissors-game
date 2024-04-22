@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./images/logo-bonus.svg" alt="" />
+      </div>
+
+      <div class="score">
+        <p>score</p>
+
+        <h3 id="scoreNumber">0</h3>
+      </div>
+    </header>
+
+    <main>
+      <div class="game">
+        <div class="cards__container">
+          <div class="game__card scissors" data-card="scissors">
+            <img src="./images/icon-scissors.svg" alt="scissors icon" />
+          </div>
+          <div class="game__card paper" data-card="paper">
+            <img src="./images/icon-paper.svg" alt="paper icon" />
+          </div>
+          <div class="game__card rock" data-card="rock">
+            <img src="./images/icon-rock.svg" alt="rock icon" />
+          </div>
+          <div class="game__card lizard" data-card="lizard">
+            <img src="./images/icon-lizard.svg" alt="lizard icon" />
+          </div>
+          <div class="game__card spock" data-card="spock">
+            <img src="./images/icon-spock.svg" alt="spock icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="game__proccess">
+        <div class="user__card">
+          <p>You Picked</p>
+        </div>
+        <div class="computer__card">
+          <p>The House Picked</p>
+
+          <div class="timer__box"><span id="timer"></span></div>
+        </div>
+      </div>
+
+      <div class="rules__container">
+        <div class="rules__box">
+          <div class="rules__header">
+            <h2>Rules</h2>
+            <img
+              id="close-rules"
+              src="./images/icon-close.svg"
+              alt="colse icon"
+            />
+          </div>
+          <img src="./images/image-rules-bonus.svg" alt="" />
+        </div>
+      </div>
+
+      <button class="rules__btn" id="open-rules">Rules</button>
+    </main>
+    <script src="main.js
+    "></script>
+  </body>
+</html>
