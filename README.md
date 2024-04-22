@@ -26,7 +26,7 @@ Welcome to the Rock Paper Scissors Game project! This simple yet engaging game i
 
 ## Demo
 
-For a live demo, check out [Rock Paper Scissors Game Demo](#) 
+For a live demo, check out [Rock Paper Scissors Game Demo](https://zaroscript.github.io/rock-paper-scissors-game/) 
 
 
 
