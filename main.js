@@ -119,7 +119,7 @@ const resultProccess = () => {
     resultMessage.innerText = "You win";
     userPicked.classList.add("win");
   } else if (result === "lose") {
-    resultMessage.innerText = "you lost";
+    resultMessage.innerText = "you lose";
     computerPicked.classList.add("win");
   } else {
     resultMessage.innerText = "It's a draw";
